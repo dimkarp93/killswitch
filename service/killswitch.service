@@ -1,0 +1,12 @@
+[Unit]
+Description=killswitch
+After=network-pre.target
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/killswitch.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
